@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta name="author" content="mesi">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Legendary Motorsport</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Parisienne&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    <link rel="stylesheet" th:href="@{/css/vehicle.css}"/>
+</head>
+
+<body>
+
+    <div id="header-container">
+
+        <header>
+
+            <div>
+                <h1 class="display-1">Legendary</h1>
+                <h3 class="display-5">MOTORSPORT</h3>
+            </div>
+            </br>
+            <div>
+                <h4>CHOOSE FROM OUR TOP END</h4>
+                <h5>HIGH PERFORMANCE CARS AT GREAT PRICES</h5>
+            </div>
+
+        </header>
+
+    </div>
+
+    <main>
+
+        <div id="main-content" class="container-fluid">
+            <div class="row main-header">
+                <div class="col-sm-6 text-center">
+                    <h2>EXCLUSIVE STOCK</h2>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <button type="button" class="btn btn-danger disabled">Sort by Price -</button>
+                </div>
+            </div>
+
+        <div class="row vehicle-row">
+            <th:block th:each="vehicle : ${vehicles}">
+
+                <div class="vehicle-tile col-lg-4 col-md-6 col-sm-6 col-xs-12 md-offset-2">
+                    <div class="vehicle-tile-inner" style="background-color: white;padding: 0.1em;">
+
+                        <h3 th:text="${#strings.toUpperCase(vehicle.headline)}"></h3>
+                        <img class="img-responsive" th:src="${vehicle.image}">
+                        <div class="vehicle-tile-bottom">
+                            <span class="vehicle-tile-bottom-name" th:text="${#strings.toUpperCase(vehicle.manufacturer + ' ' + vehicle.name)}"></span>
+                            <span class="vehicle-tile-bottom-price" th:text="${'$ ' + #numbers.formatDecimal(vehicle.price, 1, 'POINT', 2, 'COMMA')}"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </th:block>
+        </div>
+        </div>
+    </main>
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>

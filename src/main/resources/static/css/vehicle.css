@@ -1,0 +1,40 @@
+@charset "UTF-8"
+
+.vehicle-tile-inner {
+  padding: 0.1em;
+  background-color: white;
+}
+
+.vehicle-tile h3{
+
+  margin: 0;
+  padding: 0.25em 25% 0.4em 0.5em;
+  background-color: parent;
+  font-size: medium;
+}
+
+.vehicle-tile img{
+
+  max-width: 100%
+}
+
+.vehicle-tile-bottom{
+
+  background-color: black;
+  padding: 0.4em 0.4em 0.45em 0.5em;
+}
+
+.vehicle-tile-bottom-name{
+
+  color: white;
+}
+
+.vehicle-tile-bottom-price{
+
+  background-color: red;
+  display: block;
+  height: parent;
+  overflow: auto;
+  color: white;
+  float: right;
+}

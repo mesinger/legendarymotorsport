@@ -1,0 +1,27 @@
+spring:
+
+  datasource:
+    platform: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: gtaonlinedb
+    url: "jdbc:mysql://localhost:3306/gtaonlinedb?autoReconnect=true"
+    username: root
+    password: root
+    initialize: true
+    initialization-mode: always
+  jpa:
+    show-sql: true
+    hibernate.ddl-auto: create-drop
+
+  thymeleaf:
+    cache: false
+
+#security:
+#  require-ssl: true
+#
+#server:
+#  ssl:
+#    key-store-type: PKCS12
+#    key-store: classpath:keystore/legendarymotor.p12
+#    key-store-password: password
+#    key-alias: legendarymotor
